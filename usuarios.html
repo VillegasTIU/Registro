@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="diseño_usuarios.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido</h1>
+        <nav>
+            <ul>
+                <li><a href="usuarios.html">Inicio</a></li>
+                <li><a href="registro.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Formulario de Registro para Estancia o Estadía</h2>
+            <form id="registroFormulario">
+                <label for="division">Dirección de División</label>
+                <select id="division" name="division" required>
+                    <option value="">Seleccione la división</option>
+                    <option value="alimentos">Ing. en Alimentos e Ing. Agroindustrial</option>
+                    <option value="biotecnologia">Ing. en Biotecnología</option>
+                    <option value="it">Ing. en Tecnologías de la Información</option>
+                    <option value="logistica">Ing. en Logística</option>
+                    <option value="mecanica">Ing. Mecánica Automotriz</option>
+                    <option value="mecatronica">Ing. Mecatrónica</option>
+                    <option value="nanotecnologia">Ing. en Nanotecnología</option>
+                    <option value="innovacion">Ing. en Tecnologías de la Información e Innovación Digital</option>
+                    <option value="industrial">Ing. Industrial</option>
+                    <option value="administracion">Lic. en Administración</option>
+                </select>
+
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="contacto">Contacto</label>
+                <input type="text" id="contacto" name="contacto" placeholder="Nombre con grado académico (Ing., M. en C., Dr., etc.)" required>
+
+                <label for="puesto">Puesto</label>
+                <input type="text" id="puesto" name="puesto" placeholder="Puesto del contacto" required>
+
+                <label for="organizacion">Organización</label>
+                <input type="text" id="organizacion" name="organizacion" placeholder="Nombre de la organización" required>
+
+                <label for="estudiante">Estudiante</label>
+                <input type="text" id="estudiante" name="estudiante" placeholder="Apellido paterno, materno y nombre(s)" required>
+
+                <label for="genero">Género</label>
+                <select id="genero" name="genero" required>
+                    <option value="femenino">a la estudiante</option>
+                    <option value="masculino">al estudiante</option>
+                </select>
+
+                <label for="matricula">Matrícula</label>
+                <input type="number" id="matricula" name="matricula" placeholder="Solo números" required>
+
+                <label for="adscrito">Adscripción</label>
+                <select id="adscrito" name="adscrito" required>
+                    <option value="adscrita">adscrita</option>
+                    <option value="adscrito">adscrito</option>
+                </select>
+
+               
+                <label for="cuatrimestre">Cuatrimestre</label>
+                <select id="cuatrimestre" name="cuatrimestre" required>
+                    <option value="cuatrimestre4">4 Cuatrimestre</option>
+                    <option value="cuatrimestre7">7 Cuatrimestre</option>
+                    <option value="cuatrimestre10">10 Cuatrimestre</option>
+                </select>
+
+                <label for="programa">Programa Educativo</label>
+                <select id="programa" name="programa" required>
+                    <option value="">Seleccione el programa</option>
+                    <option value="alimentos">Ing. en Alimentos e Ing. Agroindustrial</option>
+                    <option value="biotecnologia">Ing. en Biotecnología</option>
+                    <option value="it">Ing. en Tecnologías de la Información</option>
+                    <option value="logistica">Ing. en Logística</option>
+                    <option value="mecanica">Ing. Mecánica Automotriz</option>
+                    <option value="mecatronica">Ing. Mecatrónica</option>
+                    <option value="nanotecnologia">Ing. en Nanotecnología</option>
+                    <option value="innovacion">Ing. en Tecnologías de la Información e Innovación Digital</option>
+                    <option value="industrial">Ing. Industrial</option>
+                    <option value="administracion">Lic. en Administración</option>
+                </select>
+
+                <label for="estancia">Estancia o Estadía</label>
+                <select id="estancia" name="estancia" required>
+                    <option value="estancia1">Estancia I</option>
+                    <option value="estancia2">Estancia II</option>
+                    <option value="estadia">Estadía</option>
+                </select>
+
+                <label for="periodo">Periodo Escolar</label>
+                <select id="periodo" name="periodo" required>
+                    <option value="enero-abril">Enero-Abril</option>
+                    <option value="mayo-agosto">Mayo-Agosto</option>
+                    <option value="septiembre-diciembre">Septiembre-Diciembre</option>
+                </select>
+
+                
+                <label for="asesor_nombre">Nombre del Asesor Académico</label>
+                <input type="text" id="asesor_nombre" name="asesor_nombre" placeholder="Nombre completo del asesor académico" required>
+
+                <label for="asesor_correo">Correo Electrónico del Asesor Académico</label>
+                <input type="email" id="asesor_correo" name="asesor_correo" placeholder="Correo electrónico del asesor académico" required>
+
+                <label for="asesor_telefono">Teléfono del Asesor Académico</label>
+                <input type="tel" id="asesor_telefono" name="asesor_telefono" placeholder="Teléfono del asesor académico" required>
+
+                <button type="submit">Generar PDF</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SEST - Sistema de Estancias</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="generar_pdf.js"></script>
+</body>
+</html>

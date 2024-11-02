@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <link rel="stylesheet" href="diseño_administrador.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido Administrador</h1>
+        <nav>
+            <ul>
+                <li><a href="administrador.html">Inicio</a></li>
+                <li><a href="javascript:void(0)" onclick="mostrarGestionUsuarios()">Gestionar Usuarios</a></li>
+                <li><a href="javascript:void(0)" onclick="mostrarAgregarUsuario()">Agregar Usuario</a></li>
+                <li><a href="registro.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h2>Gestión de la Plataforma</h2>
+        <p>Aquí puedes gestionar usuarios, ver reportes y realizar otras acciones administrativas.</p>
+        <div class="actions">
+            <button onclick="mostrarGestionUsuarios()">Gestionar Usuarios</button>
+            <button onclick="window.location.href='reporte.html'">Ver Reportes</button>
+        </div>
+    </section>
+
+    <section id="gestionar-usuarios" style="display: none;">
+        <h2>Lista de Usuarios</h2>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar ">
+            <button onclick="buscarUsuario()">Buscar</button>
+        </div>
+        <div id="usuarios-container"></div>
+        <div id="editar-usuario-form" style="display:none;">
+            <h2>Editar Usuario</h2>
+            <form id="form-editar-usuario">
+                <input type="hidden" id="id" name="id">
+                <label for="matricula">MATRICULA:</label>
+                <input type="text" id="matricula" name="matricula" required>
+                <label for="nombre">NOMBRE:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="tipo">TIPO:</label>
+                <input type="text" id="tipo" name="tipo" required>
+                <label for="estatus">ESTATUS:</label>
+                <input type="text" id="estatus" name="estatus" required>
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="agregar-usuario" style="display: none;">
+        <h2>Agregar Usuario</h2>
+        <form id="form-agregar-usuario">
+            <label for="matricula">MATRICULA:</label>
+            <input type="text" id="agregar-matricula" name="matricula" required>
+            <label for="nombre">NOMBRE:</label>
+            <input type="text" id="agregar-nombre" name="nombre" required>
+            <label for="contrasenna">CONTRASEÑA:</label>
+            <input type="password" id="agregar-contrasenna" name="contrasenna" required>
+            <label for="tipo">TIPO:</label>
+            <input type="text" id="agregar-tipo" name="tipo" required>
+            <label for="estatus">ESTATUS:</label>
+            <input type="text" id="agregar-estatus" name="estatus" required>
+            <button type="submit">Agregar Usuario</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SEST - Sistema de Estancias</p>
+    </footer>
+
+    
+    <script src="validacion_admin.js"></script>
+</body>
+</html>

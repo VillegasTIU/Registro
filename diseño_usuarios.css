@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #d3d3d3, #b0c4de); 
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #b0c4de; 
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+    transition: transform 0.3s ease;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333; 
+}
+
+form label {
+    display: block;
+    font-size: 1.1rem;
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+/* Aplicación del mismo estilo para todos los campos de entrada */
+form input[type="text"], 
+form input[type="number"], 
+form input[type="date"], 
+form input[type="email"], 
+form input[type="tel"], 
+form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #4682b4; 
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #5a9bd5; 
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ddd;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #b0c4de; 
+}
