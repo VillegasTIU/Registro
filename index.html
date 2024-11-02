@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form action="registro.php" method="POST">
+            <label for="matricula-login">Matrícula:</label>
+            <input type="text" id="matricula-login" name="matricula" maxlength="11" required>
+
+            <label for="contrasenna-login">Contraseña:</label>
+            <input type="password" id="contrasenna-login" name="contrasenna" maxlength="10" required>
+
+            <button type="submit" class="login-btn">Iniciar Sesión</button>
+        </form>
+
+        <div class="extra-options">
+            <button class="register-btn" onclick="openModal()">Registrarse</button>
+            <button class="forgot-btn" onclick="openForgotModal()">¿Olvidaste tu contraseña?</button>
+        </div>
+    </div>
+
+    <div id="modalRegistro" class="modal">
+        <div class="modal-content centered-modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Registro de Usuario</h2>
+            <form id="registroForm" action="registro.php" method="POST" onsubmit="return verificarContrasennas('contrasenna', 'confirmarContrasenna')">
+                <label for="matricula">Matrícula:</label>
+                <input type="text" id="matricula" name="matricula" maxlength="11" required oninput="validarMatricula(this)">
+                <span id="error-matricula" style="color: red; display: none;">Solo se permiten números en la matrícula.</span>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" maxlength="50" required>
+
+                <label for="contrasenna">Contraseña:</label>
+                <input type="password" id="contrasenna" name="contrasenna" maxlength="10" required>
+                <div class="password-hint">
+                    <span id="length" class="requirement">8 caracteres</span>
+                    <span id="uppercase" class="requirement">1 mayúscula</span>
+                    <span id="number" class="requirement">1 número</span>
+                </div>
+
+                <label for="confirmarContrasenna">Confirmar Contraseña:</label>
+                <input type="password" id="confirmarContrasenna" name="confirmarContrasenna" maxlength="10" required>
+
+                <button type="submit" name="registro" class="register-submit-btn">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalForgot" class="modal">
+        <div class="modal-content centered-modal">
+            <span class="close" onclick="closeForgotModal()">&times;</span>
+            <h2>Recuperar Contraseña</h2>
+            <form id="forgotForm" action="registro.php" method="POST" onsubmit="return verificarContrasennas('contrasenna-new', 'confirmarContrasenna-new')">
+                <label for="matricula-forgot">Matrícula:</label>
+                <input type="text" id="matricula-forgot" name="matricula" maxlength="11" required>
+
+                <label for="contrasenna-new">Nueva Contraseña:</label>
+                <input type="password" id="contrasenna-new" name="nueva_contrasenna" maxlength="10" required>
+                <div class="password-hint">
+                    <span id="lengthNew" class="requirement">8 caracteres</span>
+                    <span id="uppercaseNew" class="requirement">1 mayúscula</span>
+                    <span id="numberNew" class="requirement">1 número</span>
+                </div>
+
+                <label for="confirmarContrasenna-new">Confirmar Nueva Contraseña:</label>
+                <input type="password" id="confirmarContrasenna-new" name="confirmar_contrasenna" maxlength="10" required>
+
+                <button type="submit" name="recuperar" class="forgot-submit-btn">Actualizar Contraseña</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalSuccess" class="modal">
+        <div class="modal-content centered-modal">
+            <h2>Operación exitosa</h2>
+            <p>Redirigiendo al inicio de sesión...</p>
+        </div>
+    </div>
+
+    <script src="validacion.js"></script>
+</body>
+</html>
